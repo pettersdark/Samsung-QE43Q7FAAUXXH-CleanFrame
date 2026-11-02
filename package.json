@@ -2,7 +2,7 @@
   "name": "cleanframe",
   "version": "0.7.0",
   "private": true,
-  "description": "A personal, uncluttered home interface for Samsung The Frame.",
+  "description": "Personal Spanish launcher for Samsung S85F OLED TQ55S85FAUXXC.",
   "scripts": {
     "dev": "python3 scripts/preview.py",
     "check": "npm run lint && python3 scripts/check.py && npm run check:device",

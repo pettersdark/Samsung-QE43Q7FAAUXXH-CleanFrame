@@ -1,3 +1,5 @@
+> Current S85F games-TV adaptation: [project record](games/PROJECT.md), [English guide](games/README.en.md), [guía en español](games/README.es.md). Bedroom and upstream results below are historical references.
+
 > Bedroom adaptation: start with [the current project record](bedroom/PROJECT.md) and [the English guide](bedroom/README.en.md) / [la guía en español](bedroom/README.es.md). Reference-machine and historical release statements below describe upstream, not this adaptation.
 
 # Public release review
