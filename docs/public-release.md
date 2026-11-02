@@ -1,3 +1,5 @@
+> Bedroom adaptation: start with [the current project record](bedroom/PROJECT.md) and [the English guide](bedroom/README.en.md) / [la guía en español](bedroom/README.es.md). Reference-machine and historical release statements below describe upstream, not this adaptation.
+
 # Public release review
 
 The original publication record below was prepared 20 October 2026. For the current release, use the GitHub release notes and the validation results for its exact revision. CleanFrame began on one personal Samsung The Frame. Very little portability work has been done. The README presents it as a starting point to fork and adapt at the user's own risk.

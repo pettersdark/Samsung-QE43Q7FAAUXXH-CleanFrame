@@ -29,7 +29,7 @@ function harness({ supported = true, throwSource = false } = {}) {
     now += ms;
     for (const [id, timer] of timers) if (timer.at <= now) { timers.delete(id); timer.callback(); }
   }
-  return { device: window.FrameDevice, requests, launches, sourceRequests, changes, advance, setCurrent: value => { current = value; } };
+  return { window, device: window.FrameDevice, requests, launches, sourceRequests, changes, advance, setCurrent: value => { current = value; } };
 }
 
 test('a 500-app catalogue can arrive after the old eight-second deadline', () => {
@@ -51,7 +51,7 @@ test('catalogue timeout and late callbacks finish only once', () => {
   assert.equal(results.length, 0);
   h.advance(1);
   assert.equal(results.length, 1);
-  assert.match(results[0].error.message, /did not respond/);
+  assert.match(results[0].error.message, /no ha respondido/);
   h.requests[0].ok([]);
   h.requests[0].fail({ message: 'Late failure' });
   assert.equal(results.length, 1);
@@ -81,7 +81,7 @@ test('launch keeps its eight-second deadline independently of discovery', () => 
   h.device.launchApp('Synthetic.App', error => results.push(error));
   h.advance(8000);
   assert.equal(results.length, 1);
-  assert.match(results[0].message, /did not respond/);
+  assert.match(results[0].message, /no ha respondido/);
   h.launches[0].ok();
   assert.equal(results.length, 1);
 });
@@ -160,4 +160,142 @@ test('unknown and invalid ports cannot be substituted and a newer request cancel
   assert.equal(results[0].cancelled, true);
   h.sourceRequests[0].ok(video); assert.equal(h.changes.length, 0);
   h.sourceRequests[1].ok(video); assert.equal(h.changes[0].source.number, 2);
+});
+
+test('live TV uses a discovered tuner and waits for the viewer; late cancellation cannot launch it', () => {
+  const h = harness(), results = [], tuner = { type: 'TV', number: 0 };
+  h.device.liveTV(error => results.push(error));
+  h.sourceRequests[0].ok({ connected: [tuner] });
+  assert.equal(h.changes[0].source, tuner);
+  h.changes[0].ok(tuner);
+  assert.equal(h.launches[0].id, 'org.tizen.tv-viewer');
+  assert.equal(results.length, 0);
+  h.launches[0].ok();
+  assert.deepEqual(results, [null]);
+  h.device.liveTV(error => results.push(error));
+  h.device.cancelSource();
+  h.sourceRequests[1].ok({ connected: [tuner] });
+  assert.equal(h.changes.length, 1);
+  assert.equal(results[1].cancelled, true);
+});
+
+test('live TV does not invent a tuner, and timeout blocks late switching', () => {
+  const h = harness(), results = [];
+  h.device.liveTV(error => results.push(error));
+  h.sourceRequests[0].ok({ connected: [{ type: 'HDMI', number: 1 }] });
+  assert.ok(results[0]);
+  assert.equal(h.changes.length, 0);
+  h.device.liveTV(error => results.push(error));
+  h.advance(8000);
+  h.sourceRequests[1].ok({ connected: [{ type: 'TV', number: 0 }] });
+  assert.equal(results.length, 2);
+  assert.equal(h.changes.length, 0);
+});
+
+test('HDMI source-provided names are used when available, retaining the actual port', () => {
+  const h = harness();let result;
+  h.device.sources((error, list) => { assert.equal(error, null);result = list; });
+  h.sourceRequests[0].ok({ connected: [{ type: 'HDMI', number: 3, name: '  Consola  ' }] });
+  assert.equal(result[0].name, 'Consola');
+  assert.equal(result[0].number, 3);
+});
+
+
+test('TV preview stays inside the launcher and cancellation hides a late native window', () => {
+  const h = harness(), shows = [], hides = [], results = [];
+  h.window.tizen.tvwindow.show = (ok, fail, rect, type) => shows.push({ ok, fail, rect, type });
+  h.window.tizen.tvwindow.hide = ok => { hides.push(true); ok(); };
+  h.device.previewTV(['0px', '0px', '960px', '540px'], error => results.push(error));
+  h.sourceRequests[0].ok({ connected: [{ type: 'TV', number: 0 }] });
+  h.changes[0].ok({ type: 'TV', number: 0 });
+  assert.equal(h.launches.length, 0);
+  assert.equal(shows.length, 1);
+  h.device.hidePreview();
+  shows[0].ok();
+  assert.equal(results.length, 1);
+  assert.equal(results[0].cancelled, true);
+  assert.ok(hides.length >= 1);
+});
+
+test('TV preview cannot change a source when native preview is unsupported', () => {
+  const h = harness(), results = [];
+  h.device.previewTV(['0px', '0px', '960px', '540px'], error => results.push(error));
+  assert.ok(results[0]);
+  assert.equal(h.sourceRequests.length, 0);
+  assert.equal(h.changes.length, 0);
+});
+
+test('channel permission denial reports a real error and app store uses the TV store ID', () => {
+  const h = harness(), results = [];
+  h.window.tizen.tvchannel = { getChannelList: () => { throw Error('SecurityError'); } };
+  h.device.channels(error => results.push(error));
+  assert.ok(results[0]);
+  h.device.store(error => results.push(error));
+  assert.equal(h.launches[0].id, 'org.volt.apps');
+  h.launches[0].ok();
+  assert.equal(results[1], null);
+});
+
+
+test('channel listing requests at most 15 rows per call and loads subsequent pages', () => {
+  const h = harness(), calls = [], results = [];
+  const all = Array.from({ length: 42 }, (_, i) => ({ major: i + 1, minor: 0, channelName: 'Channel ' + (i + 1) }));
+  h.window.tizen.tvchannel = { getChannelList: (ok, fail, type, offset, count) => {
+    calls.push({ type, offset, count }); assert.equal(count, 15); ok(all.slice(offset, offset + count));
+  } };
+  h.device.channels((error, list) => results.push({ error, list }));
+  h.advance(0);
+  assert.deepEqual(calls.map(c => c.offset), [0, 15, 30]);
+  assert.equal(results.length, 1);assert.equal(results[0].error, null);assert.equal(results[0].list.length, 42);
+});
+
+test('channel paging stops when firmware repeats a page and ignores callbacks after timeout', () => {
+  const h = harness(), calls = [], results = [];
+  const page = Array.from({ length: 15 }, (_, i) => ({ major: i + 1 }));
+  h.window.tizen.tvchannel = { getChannelList: ok => { calls.push(ok);ok(page); } };
+  h.device.channels((error, list) => results.push({ error, list }));h.advance(0);
+  assert.equal(calls.length, 2);assert.equal(results[0].list.length, 15);
+  h.window.tizen.tvchannel.getChannelList = ok => calls.push(ok);
+  h.device.channels((error, list) => results.push({ error, list }));h.advance(15000);
+  const total = calls.length;calls[calls.length - 1](page);h.advance(0);
+  assert.equal(calls.length, total);assert.equal(results.length, 2);assert.ok(results[1].error);
+});
+
+test('both UI settings routes use the visually verified Samsung quick-settings target', () => {
+  const h = harness(), results = [];
+  h.device.settings(error => results.push(error));
+  assert.equal(h.launches[0].id, 'com.samsung.tv.quicksetting');
+  h.launches[0].ok();assert.deepEqual(results, [null]);
+});
+
+
+test('tuning supplies the firmware listener object, full channel identity and MAIN window', () => {
+  const h = harness(), requests = [], results = [];
+  h.window.tizen.tvchannel = { tune: (option, listener, fail, windowType) => {
+    assert.equal(typeof listener, 'object');assert.equal(typeof listener.onsuccess, 'function');assert.equal(typeof listener.onnosignal, 'function');assert.equal(typeof listener.onprograminforeceived, 'function');
+    requests.push({ option, listener, fail, windowType });
+  } };
+  h.device.tuneChannel({ major: 3, minor: 0, ptc: 24, programNumber: 101, transportStreamID: 55 }, error => results.push(error));
+  assert.equal(requests[0].option.ptc, 24);assert.equal(requests[0].option.programNumber, 101);assert.equal(requests[0].windowType, 'MAIN');
+  requests[0].listener.onprograminforeceived({});assert.equal(results.length, 0);
+  requests[0].listener.onsuccess({ major: 3 });assert.deepEqual(results, [null]);
+  requests[0].listener.onnosignal();assert.equal(results.length, 1);
+});
+
+test('tuning does not report success for no-signal or a different channel', () => {
+  const h = harness(), requests = [], results = [];
+  h.window.tizen.tvchannel = { tune: (option, listener) => requests.push(listener) };
+  h.device.tuneChannel({ major: 3 }, error => results.push(error));requests[0].onnosignal();assert.ok(results[0]);
+  h.device.tuneChannel({ major: 5 }, error => results.push(error));requests[1].onsuccess({ major: 7 });assert.ok(results[1]);
+});
+
+test('imported native HDMI names label the actual port without remapping a different shortcut', () => {
+  const h = harness(); h.window.CleanFrameSourceNames = {3:'Steam'};
+  let inputs;h.device.sources((error,list)=>{assert.equal(error,null);inputs=list});
+  h.sourceRequests[0].ok({connected:[{type:'HDMI',number:3}],disconnected:[{type:'HDMI',number:2}]});
+  assert.equal(inputs.find(i=>i.number===3).name,'Steam');
+  assert.equal(inputs.find(i=>i.number===2).name,'HDMI 2');
+  h.device.setSource(3,()=>{});h.sourceRequests[1].ok({connected:[{type:'HDMI',number:3}],disconnected:[{type:'HDMI',number:2}]});
+  assert.equal(h.changes[0].source.number,3);
+  h.changes[0].ok({type:'HDMI',number:3});h.launches[0].ok();
 });

@@ -47,7 +47,7 @@ Open the editor from Settings or All apps. On Home shows the current order on th
 
 - Reorder: OK on an app name picks it up. Up/Down moves it. OK places it and saves the order. Back puts an unplaced app back without saving that move.
 - Remove: Right from an app name reaches Remove from Home. OK saves the removal and moves focus to the same app in Recently removed. The app stays installed.
-- Add: OK on an app in Not on Home adds it and saves. A recently removed app returns to its previous position within the editing session; another app is added at the end. Focus follows the app to its Remove from Home control, so another OK can reverse the addition.
+- Add: OK on an app in Not on Home adds it and saves. A recently removed app returns to its previous position within the editing session; another app is added at the end. Focus follows the app to its name, so OK can start reordering the newly added shortcut.
 - Undo reverses a completed addition, removal or reorder from the current editing session. Done or Back closes the editor and keeps completed changes. Undo history ends when the editor closes.
 
 Removing the last Home app or adding a tenth app is prevented. A failed storage write keeps the committed choices and order, with a retry message. Saved native app IDs and names survive a restart or a failed catalogue refresh.
@@ -96,3 +96,63 @@ Both layouts show the TV's local time in 12-hour format, without AM/PM or second
 Photographic materials and blurred panel backgrounds are generated before packaging and stay aligned with the full-screen image. Photo colour and contrast metadata are also prepared offline. Navigation does not sample image pixels, run an optics engine or apply live backdrop blur. Flat backgrounds use matching light or dark panel colours. Focus feedback uses transforms and opacity; reduced motion removes animated scaling and movement while retaining opacity feedback.
 
 Hidden prelaunch can install a fully loaded wallpaper bundle without waiting for an animation frame. A valid loaded image remains usable if detached-image decoding rejects. A failed startup bundle retries when the launcher becomes visible; an active wallpaper preview keeps its candidate. Font recovery clears fallback measurements and cached markup. This readiness fallback uses a completed load and nonzero image dimensions; it does not prove a TV has painted the image, and an accepted bundle is not automatically decoded again on return. These paths have browser regression coverage; physical cold-boot behaviour still needs owner observation.
+
+
+## Adaptación para TV del dormitorio
+
+La variante local muestra TV en directo, Entradas, Todas las aplicaciones, Personalizar y Ajustes TV como accesos separados. El foco de los controles superiores usa un fondo gris discreto sobre temas de día y noche. Descargar aplicaciones abre Samsung Apps desde el panel de aplicaciones.
+
+El catálogo se obtiene de Tizen al iniciar y al volver de otras aplicaciones. El arranque conserva una copia verificada de las apps de este televisor; las consultas fallidas conservan los datos verificados. Se retiran las apps desinstaladas sin añadir accesos del catálogo original. El orden elegido se conserva.
+
+Entradas permite seleccionar cada HDMI. Personalizar → Samsung → Nombres HDMI permite editar las etiquetas locales con teclado en pantalla y botones Guardar/Cancelar; los alias se muestran también en el carrusel y no modifican Samsung.
+
+TV en directo intenta mostrar el sintonizador dentro de una ventana nativa y permite pasar al visor de Samsung a pantalla completa. La lista de canales y su sintonización solo se habilitan si el firmware y los permisos realmente las permiten. Una API ausente o una denegación muestra un estado real; no se simulan canales. Salir oculta la ventana y cancela operaciones pendientes.
+
+La asignación Home y los ajustes de inicio se gestionan por separado, con identidad y firmware exactos, instantánea original y herramienta de restauración privada. Los valores leídos del sistema no prueban el resultado de espera/encendido ni la salida visible de Netflix o YouTube.
+
+
+### TDT y ajustes confirmados en la S93D
+
+La lista real se solicita en bloques de hasta quince canales y se presenta como lista vertical desplazable a la izquierda del vídeo. Al navegar con el mando, el foco se mantiene visible y la selección mantenida 650 ms solicita la sintonización; OK la solicita inmediatamente. La llamada de TVChannel.tune usa el listener de este firmware (onsuccess, onnosignal y onprograminforeceived), conserva los identificadores de la lista y selecciona la ventana MAIN. Un evento de programa no se interpreta como confirmación de sintonización. El propietario confirmó que la emisión cambia desde la lista tras esta corrección.
+
+Los dos accesos Ajustes TV abren com.samsung.tv.quicksetting, cuyo panel se confirmó en pantalla. Los intentos anteriores con com.samsung.tv.coba.setting, org.tizen.homesetting y la operación genérica de ajustes no mostraron el panel en este firmware.
+
+La galería del dormitorio conserva los cuatro fondos iniciales y añade parejas de día/noche de Arcade, PC interior, Sobremesa, Portátiles, Cine y Cine en casa (veintidós fondos en total, contando Maratón de series, Guion y Rincón de streaming). Un fondo retirado guardado en preferencias se normaliza a Consolas noche. Los recursos retirados del paquete se conservan fuera de la aplicación en backups/fondos-retirados-v6.
+
+Las entradas HDMI detectadas por la TV aparecen al final del catálogo para poder añadirlas, quitarlas y ordenarlas en Inicio junto a las apps. No se añaden automáticamente. Su identidad hdmi.N y número de puerto se conservan en preferencias; abrirlas usa el cambio de fuente real, no el lanzamiento de una aplicación. Las consultas fallidas conservan el catálogo previamente verificado de ese tipo.
+
+### Navegación visible y editor del carrusel
+
+Todos los paneles internos (catálogo, editor, Personalizar, sus grupos, imágenes, entradas y mensajes) comparten una cabecera con Volver al menú anterior e Inicio. La flecha arriba desde los primeros controles alcanza la cabecera; izquierda/derecha cambia entre sus acciones y abajo vuelve al control previo. En los grupos de Personalizar y en imágenes, izquierda también llega a la cabecera. El foco solo aparece en una región a la vez. Los botones pueden activarse por puntero y el botón Volver del mando sigue funcionando. La vista TV en directo conserva su botón superior Volver a Inicio; las pantallas nativas de Samsung usan sus propios controles.
+
+Añadir y ordenar muestra Orden del carrusel y Disponibles para añadir. Cada nombre tiene una indicación Mover y las instrucciones explican OK, arriba/abajo y OK para guardar. Al mover se muestran Guardar posición y Cancelar movimiento. Terminar conserva los cambios completados y cierra el editor; Inicio cancela un movimiento aún no confirmado y vuelve a Inicio. Añadir enfoca el nombre del nuevo acceso, permitiendo ordenarlo sin que otro OK lo quite accidentalmente. La denominación acceso incluye aplicaciones y HDMI.
+
+### Legibilidad, reloj y nombres de entradas del dormitorio
+
+Los materiales Suave, Esmerilado y Translúcido se muestran en filas completas, con columna propia para el tick. El resto de opciones reserva espacio a la marca y permite ajustar el texto dentro de su ancho. El reloj usa HH:mm en formato de 24 horas y muestra debajo el día de la semana en español.
+
+La API pública VIDEOSOURCE solo garantiza tipo, número y señal, no el nombre editado de Samsung. Para esta instalación se ha leído el registro nativo de fuentes como usuario SDK, con guardas de modelo y firmware y sin modificar ajustes. El nombre Steam corresponde al tipo nativo 15, HDMI 3. El importador privado guarda los nombres en .local/hdmi-probe/names.json y el constructor los incorpora a assets/source-names.js en el paquete firmado. Es una importación en la compilación: los cambios posteriores de nombre en Samsung necesitan una nueva sincronización desde el PC. Cuando una API entrega un nombre directamente se usa como nombre base; un alias manual del propietario tiene prioridad.
+
+Los nombres nunca cambian el número de puerto de un acceso guardado. Un acceso HDMI 2 sigue abriendo HDMI 2; Steam se debe añadir como acceso del HDMI 3. El catálogo y la lista de Inicio actualizan el texto al recibir nombres distintos, sin reutilizar un texto anterior de la caché. El cambio de fuente selecciona explícitamente la ventana MAIN y después abre el visor de TV; el resultado de imagen aún requiere prueba física del propietario.
+
+### Editor manual de nombres HDMI
+
+Personalizar → Nombres HDMI permite elegir una entrada real (también accesible en Samsung → Nombres HDMI) y renombrar su acceso. El editor utiliza su propio teclado en pantalla, manejable con flechas y OK, con minúsculas/mayúsculas, acentos y símbolos. También admite un teclado físico. Guardar y Cancelar son botones visibles en la cabecera; Volver e Inicio descartan lo no guardado. Nombre original vacía el campo y requiere Guardar para restablecer el nombre base.
+
+El nombre se limita a cuarenta caracteres y se guarda en cleanframe.hdmi.names.v1. Un fallo de almacenamiento mantiene el nombre anterior, conserva el borrador y muestra un error con posibilidad de reintentar o cancelar. Los alias manuales tienen prioridad sobre el nombre base y se muestran en Entradas, el catálogo, el editor y el carrusel. Nunca modifican la configuración de Samsung ni el puerto real del acceso. El guardado y la carga del catálogo conservan también el nombre base por separado para poder restablecerlo.
+
+En Inicio, al mover el foco a los controles superiores desaparece el resaltado recordado de la app, tanto en Carrusel como en Lista. Solo el control superior mantiene foco; su placa gris tiene un contraste algo mayor en día y noche. Nombres HDMI está en el primer nivel de Personalizar; sus siete categorías caben sobre las ayudas inferiores.
+
+### Iconos por HDMI y selección coherente
+
+Personalizar → Entradas HDMI → una entrada muestra Cambiar nombre y Elegir icono. Se conservan el editor de nombres y su guardado independiente. Los iconos disponibles son HDMI genérico, Steam, Nintendo Switch original (sin 2) y PlayStation 5. La elección se guarda por puerto en cleanframe.hdmi.icons.v1, se muestra en el carrusel, catálogo, editor y Entradas, y no altera el número de fuente. Un error de guardado conserva el icono previo y muestra un reintento; los valores desconocidos guardados se ignoran al cargar.
+
+Todos los controles de menús usan el mismo fondo gris de foco, borde tenue y tinta de su tema: cabeceras, Guardar/Cancelar/Nombre original, navegación, opciones y teclado. Los modos claros usan tinta oscura y superficies claras también en menús; los oscuros usan tinta clara. Los logos de 3Cat, SkyShowtime, Disney+ y atresplayer usan arte monocromo empaquetado. Las marcas se resuelven sobre apps realmente instaladas; preparar atresplayer no crea una app ausente ni un destino ficticio. Las cachés de vistas incluyen la elección del icono por puerto.
+
+### TV en directo como acceso del carrusel
+
+TV en directo aparece como acceso interno opcional en Añadir y ordenar. No se incorpora automáticamente a Inicio ni se presenta como una app instalada de Samsung. Se puede añadir, mover y retirar con el mismo editor, conservando orden y selección al reiniciar. Su identificador estable tv.live se conserva incluso si falla la consulta de apps; el inicio por defecto sigue eligiendo apps reales y no añade este acceso por su cuenta.
+
+Abrirlo desde el carrusel usa exactamente la misma vista integrada de TV en directo que el control superior, con listado de canales y pantalla completa; nunca lanza tv.live como ID de aplicación del sistema. El icono original representa un televisor con antena, reproducción y punto de emisión, siguiendo la tinta monocroma del tema.
+
+La colección Series v3 añade Maratón de series, Estudio de guion y Rincón de streaming en día y noche, sin personajes ni imágenes de series. El catálogo total contiene veintidós fondos; el selector conserva el desplazamiento y permite llegar a la última imagen con el mando.

@@ -22,14 +22,18 @@ The public app uses Manrope, Geist and Newsreader. A personal widget containing 
 
 Brand marks identify services. Their owners retain trademark rights; this project claims no endorsement or affiliation. The older Australian TV icon archive's GPL text is retained for historical provenance only; no current icon uses that archive.
 
-## Photographs and derived materials
+## Wallpapers and derived materials in this adaptation
 
-The fifteen photo pages were individually checked on 20 October 2026. Each displayed its credited author and free use under the [Unsplash License](https://unsplash.com/license). The [asset source register](docs/asset-sources.md) links every page. Runtime paths are in `app/assets/wallpapers/SOURCES.json`.
+The current application bundles 22 AI-generated backgrounds (11 day/night pairs), created with OpenAI ImageGen for this project. Selected full-resolution masters and generation prompts are in `design/backgrounds/`; runtime files and provenance are recorded in `app/assets/wallpapers/SOURCES.json`. Runtime JPEGs, thumbnails, panels and pre-rendered materials derive from those masters. Generated scenes may depict recognizable product shapes; no platform or manufacturer endorsement is claimed. Distribution does not grant rights to third-party trademarks.
 
-Photographers retain their rights. Wallpapers, thumbnails, panel backgrounds and material fields derive from the credited photographs and retain their terms. The Unsplash licence permits copying, modification and distribution subject to its restrictions, including on selling unmodified images and building a competing image service.
+The upstream Unsplash photographs were removed from the current app. Their historical source register and notices remain in Git history and upstream documentation; do not describe those photographs as the active gallery.
 
 ## Development dependencies and exports
 
 Development dependencies retain the licences in their npm packages. They are not copied into the TV JavaScript runtime.
 
 `npm run export:public` excludes private fonts and includes this notice and the root MIT licence. Preserve the included font and icon licence texts. Review [public release preparation](docs/public-release.md) before publishing a repository or download.
+
+## Additional identifying brand marks in the bedroom variant
+
+3Cat, SkyShowtime and atresplayer SVG artwork comes from the owners' official sites; monochrome adaptations retain the identifying geometry. Copyright and trademark rights remain with the respective owners; these marks are not relicensed under the repository's MIT licence. Sources are recorded in app/assets/icons/ADDITIONAL-SOURCES.json. Steam, original Nintendo Switch and PlayStation 5 marks use Simple Icons artwork under the included CC0 licence; trademark rights remain with their owners.

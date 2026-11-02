@@ -16,5 +16,47 @@
     "source": "https://github.com/simple-icons/simple-icons/blob/develop/icons/tubi.svg",
     "licence": "CC0-1.0",
     "note": "Shape unchanged; white fill for launcher."
+  },
+  {
+    "id": "steam",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/4d29a35c954699b389a834aacc97dd6e7e74143c/icons/steam.svg",
+    "licence": "CC0-1.0",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "playstation5",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/4d29a35c954699b389a834aacc97dd6e7e74143c/icons/playstation5.svg",
+    "licence": "CC0-1.0",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "nintendoswitch",
+    "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/11.0.0/icons/nintendoswitch.svg",
+    "licence": "CC0-1.0",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "3cat",
+    "source": "https://www.3cat.cat/_resources/logos/3cat.svg",
+    "licence": "Brand artwork from official site; trademark belongs to its owner",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "skyshowtime",
+    "source": "https://www.skyshowtime.com/es",
+    "licence": "Brand artwork from official site; trademark belongs to its owner",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "atresplayer",
+    "source": "https://statics.atresmedia.com/atresplayer/assets/web/images/channels_new/logo-atresplayer-red.svg",
+    "licence": "Brand artwork from official site; trademark belongs to its owner",
+    "note": "Geometry retained; white fill, no gradients or drop shadow; rendered with currentColor mask for light/dark."
+  },
+  {
+    "id": "livetv",
+    "source": "Original vector artwork for the bedroom launcher",
+    "licence": "MIT",
+    "note": "Monochrome TV outline, antenna, play symbol and live indicator; rendered using the existing light/dark mask system."
   }
 ]

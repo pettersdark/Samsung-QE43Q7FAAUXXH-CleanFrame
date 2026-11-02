@@ -1,3 +1,5 @@
+> Bedroom adaptation: start with [the current project record](bedroom/PROJECT.md) and [the English guide](bedroom/README.en.md) / [la guía en español](bedroom/README.es.md). Reference-machine and historical release statements below describe upstream, not this adaptation.
+
 # Development
 
 ## Browser preview

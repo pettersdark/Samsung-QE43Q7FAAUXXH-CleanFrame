@@ -38,3 +38,11 @@ The retained generator covers all fifteen filenames and writes `.local/materials
 For another photo, add its source/credit to `SOURCES.json`, prepare its background and thumbnail, add the gallery entry in `catalog.js`, generate the four registered materials and panel backdrop, then measure and review its foreground metadata. Keep the crop identical across all assets. Run source and browser checks before packaging.
 
 Source pages and licence observations are recorded in [asset sources](asset-sources.md).
+
+El icono de esta variante usa el maestro vectorial app/assets/bedroom-icon.svg: televisor con mando y borde cian/violeta. app/icon.png es su exportación a 256 px, conservando la dimensión anterior.
+
+## Colección adicional del dormitorio
+
+Se conservan los cuatro fondos iniciales. La colección adicional tiene doce imágenes: Arcade, PC interior, consolas de sobremesa de distintas épocas, consolas portátiles de distintas épocas, Cine y Cine en casa, cada una en día y noche. Los originales PNG y el conjunto de prompts se guardan fuera del repositorio de código en ../diseno/fondos. ImageGen integrado genera las imágenes; cada noche se deriva de su día para conservar la composición. El paquete usa JPEG centrado de 1920×1080, miniatura de 320×180, fondo de panel y cuatro materiales preparados con la receta existente. No se genera desenfoque durante la navegación en la TV.
+
+La colección Series v3 añade seis fondos (Maratón, Guion y Streaming, día/noche) y eleva el catálogo a 22. Sus maestros y prompts están en ../diseno/fondos/prompts-series-v3.json. El icono TV en directo es un SVG original monocromo en app/assets/icons/livetv.svg con métricas ópticas calculadas offline.

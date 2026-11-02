@@ -1,152 +1,222 @@
 [
   {
-    "id": "misty",
-    "name": "Misty coast",
-    "src": "assets/wallpapers/misty.jpg",
-    "thumb": "assets/wallpapers/misty-thumb.jpg",
-    "pos": "50% 50%",
-    "tone": "light",
-    "credit": "Ganapathy Kumar",
-    "source": "https://unsplash.com/photos/n4VMQZIkgDg"
-  },
-  {
-    "id": "cove",
-    "name": "Quiet cove",
-    "src": "assets/wallpapers/cove.jpg",
-    "thumb": "assets/wallpapers/cove-thumb.jpg",
-    "pos": "50% 50%",
-    "tone": "light",
-    "credit": "Joshua Wordel",
-    "source": "https://unsplash.com/photos/1L_5PT7EKzU"
-  },
-  {
-    "id": "forest",
-    "name": "Forest mist",
-    "src": "assets/wallpapers/forest.jpg",
-    "thumb": "assets/wallpapers/forest-thumb.jpg",
+    "id": "consolas-noche",
+    "name": "Consolas · Noche",
+    "src": "assets/wallpapers/consolas-noche.jpg",
+    "thumb": "assets/wallpapers/consolas-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "Dejan Zakic",
-    "source": "https://unsplash.com/photos/rr2EF3J5F2Y"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/consolas-noche-v1.png"
   },
   {
-    "id": "valley",
-    "name": "Mountain valley",
-    "src": "assets/wallpapers/valley.jpg",
-    "thumb": "assets/wallpapers/valley-thumb.jpg",
-    "pos": "50% 50%",
-    "tone": "dark",
-    "credit": "Aniket Deole",
-    "source": "https://unsplash.com/photos/M6XC789HLe8"
-  },
-  {
-    "id": "night",
-    "name": "Desert stars",
-    "src": "assets/wallpapers/night.jpg",
-    "thumb": "assets/wallpapers/night-thumb.jpg",
+    "id": "consolas-dia",
+    "name": "Consolas · Día",
+    "src": "assets/wallpapers/consolas-dia.jpg",
+    "thumb": "assets/wallpapers/consolas-dia-thumb.jpg",
     "pos": "50% 50%",
     "tone": "light",
-    "credit": "Mohammad Alizade",
-    "source": "https://unsplash.com/photos/4wzRuAb-KWs"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/consolas-dia-v1.png"
   },
   {
-    "id": "peaks",
-    "name": "Blue peaks",
-    "src": "assets/wallpapers/peaks.jpg",
-    "thumb": "assets/wallpapers/peaks-thumb.jpg",
+    "id": "pc-noche",
+    "name": "PC y consolas · Noche",
+    "src": "assets/wallpapers/pc-noche.jpg",
+    "thumb": "assets/wallpapers/pc-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "John Rodenn Castillo",
-    "source": "https://unsplash.com/photos/rQqWOHZ96OM"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/pc-noche-v1.png"
   },
   {
-    "id": "bridge",
-    "name": "Bridge at dusk",
-    "src": "assets/wallpapers/bridge.jpg",
-    "thumb": "assets/wallpapers/bridge-thumb.jpg",
+    "id": "pc-dia",
+    "name": "PC y consolas · Día",
+    "src": "assets/wallpapers/pc-dia.jpg",
+    "thumb": "assets/wallpapers/pc-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/pc-dia-v1.png"
+  },
+  {
+    "id": "arcade-dia",
+    "name": "Arcade · Día",
+    "src": "assets/wallpapers/arcade-dia.jpg",
+    "thumb": "assets/wallpapers/arcade-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/arcade-dia-v1.png"
+  },
+  {
+    "id": "arcade-noche",
+    "name": "Arcade · Noche",
+    "src": "assets/wallpapers/arcade-noche.jpg",
+    "thumb": "assets/wallpapers/arcade-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "Justin Wolff",
-    "source": "https://unsplash.com/photos/pbp_Ww2cewA"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/arcade-noche-v1.png"
   },
   {
-    "id": "ridge",
-    "name": "Sunlit ridges",
-    "src": "assets/wallpapers/ridge.jpg",
-    "thumb": "assets/wallpapers/ridge-thumb.jpg",
+    "id": "pc-interior-dia",
+    "name": "PC interior · Día",
+    "src": "assets/wallpapers/pc-interior-dia.jpg",
+    "thumb": "assets/wallpapers/pc-interior-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/pc-interior-dia-v1.png"
+  },
+  {
+    "id": "pc-interior-noche",
+    "name": "PC interior · Noche",
+    "src": "assets/wallpapers/pc-interior-noche.jpg",
+    "thumb": "assets/wallpapers/pc-interior-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "Cristina Gottardi",
-    "source": "https://unsplash.com/photos/wndpWTiDuT0"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/pc-interior-noche-v1.png"
   },
   {
-    "id": "golden",
-    "name": "Golden hour",
-    "src": "assets/wallpapers/golden.jpg",
-    "thumb": "assets/wallpapers/golden-thumb.jpg",
+    "id": "sobremesa-historia-dia",
+    "name": "Sobremesa · Día",
+    "src": "assets/wallpapers/sobremesa-historia-dia.jpg",
+    "thumb": "assets/wallpapers/sobremesa-historia-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/sobremesa-historia-dia-v1.png"
+  },
+  {
+    "id": "sobremesa-historia-noche",
+    "name": "Sobremesa · Noche",
+    "src": "assets/wallpapers/sobremesa-historia-noche.jpg",
+    "thumb": "assets/wallpapers/sobremesa-historia-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "Karthik Sreenivas",
-    "source": "https://unsplash.com/photos/tmtkhWbgMu8"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/sobremesa-historia-noche-v1.png"
   },
   {
-    "id": "summit",
-    "name": "Sunlit summits",
-    "src": "assets/wallpapers/summit.jpg",
-    "thumb": "assets/wallpapers/summit-thumb.jpg",
+    "id": "portatiles-historia-dia",
+    "name": "Portátiles · Día",
+    "src": "assets/wallpapers/portatiles-historia-dia.jpg",
+    "thumb": "assets/wallpapers/portatiles-historia-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/portatiles-historia-dia-v1.png"
+  },
+  {
+    "id": "portatiles-historia-noche",
+    "name": "Portátiles · Noche",
+    "src": "assets/wallpapers/portatiles-historia-noche.jpg",
+    "thumb": "assets/wallpapers/portatiles-historia-noche-thumb.jpg",
     "pos": "50% 50%",
     "tone": "dark",
-    "credit": "Rudra Gupta",
-    "source": "https://unsplash.com/photos/PuTSzJJ-qyU"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/portatiles-historia-noche-v1.png"
   },
   {
-    "id": "goldcoast",
-    "name": "Gold Coast dusk",
-    "src": "assets/wallpapers/goldcoast.jpg",
-    "thumb": "assets/wallpapers/goldcoast-thumb.jpg",
+    "id": "cine-dia",
+    "name": "Cine · Día",
+    "src": "assets/wallpapers/cine-dia.jpg",
+    "thumb": "assets/wallpapers/cine-dia-thumb.jpg",
     "pos": "50% 50%",
     "tone": "light",
-    "credit": "City of Gold Coast",
-    "source": "https://unsplash.com/photos/YiaGblobOGI"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/cine-dia-v1.png"
   },
   {
-    "id": "sydney",
-    "name": "Sydney Harbour",
-    "src": "assets/wallpapers/sydney.jpg",
-    "thumb": "assets/wallpapers/sydney-thumb.jpg",
+    "id": "cine-noche",
+    "name": "Cine · Noche",
+    "src": "assets/wallpapers/cine-noche.jpg",
+    "thumb": "assets/wallpapers/cine-noche-thumb.jpg",
     "pos": "50% 50%",
-    "tone": "light",
-    "credit": "Caleb",
-    "source": "https://unsplash.com/photos/JmuyB_LibRo"
+    "tone": "dark",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/cine-noche-v1.png"
   },
   {
-    "id": "amber",
-    "name": "Amber hills",
-    "src": "assets/wallpapers/amber.jpg",
-    "thumb": "assets/wallpapers/amber-thumb.jpg",
+    "id": "cine-casa-dia",
+    "name": "Cine en casa · Día",
+    "src": "assets/wallpapers/cine-casa-dia.jpg",
+    "thumb": "assets/wallpapers/cine-casa-dia-thumb.jpg",
     "pos": "50% 50%",
     "tone": "light",
-    "credit": "Chris Barbalis",
-    "source": "https://unsplash.com/photos/vazZtmYFgFY"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/cine-casa-dia-v1.png"
   },
   {
-    "id": "mint",
-    "name": "Mint wave",
-    "src": "assets/wallpapers/mint.jpg",
-    "thumb": "assets/wallpapers/mint-thumb.jpg",
+    "id": "cine-casa-noche",
+    "name": "Cine en casa · Noche",
+    "src": "assets/wallpapers/cine-casa-noche.jpg",
+    "thumb": "assets/wallpapers/cine-casa-noche-thumb.jpg",
     "pos": "50% 50%",
-    "tone": "light",
-    "credit": "MagicPattern",
-    "source": "https://unsplash.com/photos/87PP9Zd7MNo"
+    "tone": "dark",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/cine-casa-noche-v1.png"
   },
   {
-    "id": "alpine",
-    "name": "Alpine glow",
-    "src": "assets/wallpapers/alpine.jpg",
-    "thumb": "assets/wallpapers/alpine-thumb.jpg",
+    "id": "maraton-series-dia",
+    "name": "Maratón · Día",
+    "src": "assets/wallpapers/maraton-series-dia.jpg",
+    "thumb": "assets/wallpapers/maraton-series-dia-thumb.jpg",
     "pos": "50% 50%",
     "tone": "light",
-    "credit": "Cristina Gottardi",
-    "source": "https://unsplash.com/photos/CSpjU6hYo_0"
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/maraton-series-dia-v2.png"
+  },
+  {
+    "id": "maraton-series-noche",
+    "name": "Maratón · Noche",
+    "src": "assets/wallpapers/maraton-series-noche.jpg",
+    "thumb": "assets/wallpapers/maraton-series-noche-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "dark",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/maraton-series-noche-v2.png"
+  },
+  {
+    "id": "estudio-guion-dia",
+    "name": "Guion · Día",
+    "src": "assets/wallpapers/estudio-guion-dia.jpg",
+    "thumb": "assets/wallpapers/estudio-guion-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/estudio-guion-dia-v1.png"
+  },
+  {
+    "id": "estudio-guion-noche",
+    "name": "Guion · Noche",
+    "src": "assets/wallpapers/estudio-guion-noche.jpg",
+    "thumb": "assets/wallpapers/estudio-guion-noche-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "dark",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/estudio-guion-noche-v1.png"
+  },
+  {
+    "id": "rincon-streaming-dia",
+    "name": "Streaming · Día",
+    "src": "assets/wallpapers/rincon-streaming-dia.jpg",
+    "thumb": "assets/wallpapers/rincon-streaming-dia-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "light",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/rincon-streaming-dia-v1.png"
+  },
+  {
+    "id": "rincon-streaming-noche",
+    "name": "Streaming · Noche",
+    "src": "assets/wallpapers/rincon-streaming-noche.jpg",
+    "thumb": "assets/wallpapers/rincon-streaming-noche-thumb.jpg",
+    "pos": "50% 50%",
+    "tone": "dark",
+    "credit": "Generada con OpenAI ImageGen para este proyecto",
+    "source": "design/backgrounds/rincon-streaming-noche-v1.png"
   }
 ]

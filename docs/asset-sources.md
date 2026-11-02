@@ -27,3 +27,7 @@ The background preparation and material rendering steps are described in [asset 
 Public fonts are Manrope, Geist and Newsreader under SIL OFL 1.1. Their licence texts are beside the assets; Geist and Newsreader source URLs and hashes are in `app/assets/fonts/SOURCES.json`.
 
 Icon sources, exact revisions and adaptation notes are in `app/assets/icons/SOURCES.json` and `ADDITIONAL-SOURCES.json`. ABC and SBS use the MIT Custom Brand Icons source at revision `a53cabf49bf439023a8f33585af30d783bffe51b`; ABC is recoloured from `abc-australia.svg`, and SBS is the extracted feather contour from `sbs-chill.svg`. The Disney+ icon also uses that project under MIT. Other service icons use Simple Icons under CC0. Utility outlines are original CleanFrame drawings. See [third-party notices](../THIRD_PARTY_NOTICES.md) for the retained licence texts and trademark scope.
+
+## Marcas adicionales para el dormitorio
+
+3Cat procede del SVG del sitio oficial https://www.3cat.cat/_resources/logos/3cat.svg; SkyShowtime del SVG inline de https://www.skyshowtime.com/es; atresplayer de https://statics.atresmedia.com/atresplayer/assets/web/images/channels_new/logo-atresplayer-red.svg. Se conservan sus geometrías y se eliminan color y sombra para identificación monocroma. Las marcas pertenecen a sus titulares. Steam, Nintendo Switch original y PlayStation 5 proceden de Simple Icons bajo CC0-1.0, con URLs fijadas en app/assets/icons/ADDITIONAL-SOURCES.json. Las métricas ópticas se calculan fuera de la TV.

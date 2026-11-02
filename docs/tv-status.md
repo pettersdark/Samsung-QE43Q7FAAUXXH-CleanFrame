@@ -1,3 +1,5 @@
+> Bedroom adaptation: start with [the current project record](bedroom/PROJECT.md) and [the English guide](bedroom/README.en.md) / [la guía en español](bedroom/README.es.md). Reference-machine and historical release statements below describe upstream, not this adaptation.
+
 # Reference TV and verification status
 
 Recorded through 20 October 2026. These results describe the maintainer's TV. Other models, firmware and operating systems need their own checks. Repo-only work must not contact the TV.

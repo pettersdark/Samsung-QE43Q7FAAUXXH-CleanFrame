@@ -633,3 +633,145 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000}
 .l-list .quiet-utils.is-text .u-content>*+*{margin-left:0;margin-right:0}
 .quiet-utils.is-text .u-content>*+*{margin-left:0}
 .l-list .quiet-utils.is-text .u .u-content>*+*{margin-right:0}
+
+/* The two white gaming wallpapers use dark ink and light glass surfaces.
+   Scoped to photographic Home so flat themes and settings retain their contrast. */
+.bg-photo.gaming-day .home{--ink:#17202b;--ph-ink:#17202b;--mute:rgba(23,32,43,.76);--faint:rgba(23,32,43,.58);--solid:#17202b;--solid-ink:#fff;--plate:rgba(23,32,43,.12);--lift:rgba(23,32,43,.18);color:#17202b}
+.bg-photo.gaming-day .scrim,.bg-photo.gaming-day .shade,.bg-photo.gaming-day .ph-dim,.bg-photo.gaming-day .ph-scrim,.bg-photo.gaming-day .ph-col{display:none}
+.bg-photo.gaming-day .clock,.bg-photo.gaming-day .cap-title,.bg-photo.gaming-day .cap-line,.bg-photo.gaming-day .ph-name,.bg-photo.gaming-day .label,.bg-photo.gaming-day .app-focus-name{color:#17202b;text-shadow:none}
+.bg-photo.gaming-day .dock .mat{background:rgba(255,255,255,.94);border:1px solid rgba(23,32,43,.14);box-shadow:0 12px 32px rgba(23,32,43,.08)}
+.bg-photo.gaming-day.m-frost .dock .mat{background:rgba(255,255,255,.86)}
+.bg-photo.gaming-day.m-tint .dock .mat{background:rgba(255,255,255,.68)}
+.bg-photo.gaming-day .dock .mat-img,.bg-photo.gaming-day .dock .mat-scrim,.bg-photo.gaming-day .dock .mat-veil{display:none}
+.bg-photo.gaming-day .dock .plate.on-focus{background:rgba(23,32,43,.12);box-shadow:inset 0 0 0 1px rgba(23,32,43,.16)}
+.bg-photo.gaming-day .dock .plate.on-sel{background:rgba(23,32,43,.08)}
+.bg-photo.gaming-day .dock .plate.on-lift{background:rgba(23,32,43,.18)}
+.bg-photo.gaming-day .ph-plate{background:rgba(255,255,255,.92);box-shadow:inset 0 0 0 1px rgba(23,32,43,.16)}
+.bg-photo.gaming-day .ph-field{opacity:.24}
+.bg-photo.gaming-day .ph-veil{background:rgba(255,255,255,.48)}
+.bg-photo.gaming-day .ph-action,.bg-photo.gaming-day .dock-action{color:#17202b;text-shadow:none}
+.bg-photo.gaming-day .ph-action.is-focus,.bg-photo.gaming-day .dock-action.is-focus{background:#17202b;color:#fff}
+.bg-photo.gaming-day .ut-underlay{display:none}
+
+.bg-photo.gaming-day{--tr-ink:#17202b;--br-ink:#17202b;--tr-under:transparent;--br-under:transparent;--tr-shadow:none;--br-shadow:none}
+
+/* Discreet remote focus for the top controls, in every appearance. */
+.quiet-utils .u{border-radius:18px;transition:background-color 140ms linear,opacity 140ms linear}
+.quiet-utils .u.is-focus{background:rgba(145,150,158,.18);box-shadow:inset 0 0 0 1px rgba(180,185,192,.10)}
+.bg-photo.gaming-day .quiet-utils .u.is-focus,.bg-light .quiet-utils .u.is-focus{background:rgba(80,90,105,.11);box-shadow:inset 0 0 0 1px rgba(60,70,85,.08)}
+.ut-lens{display:none}
+.owner-dialog[hidden]{display:none}
+.owner-dialog{position:fixed;left:0;top:0;right:0;bottom:0;z-index:30;background:rgba(5,9,15,.88);display:flex;align-items:center;justify-content:center;font-family:Manrope,Arial,sans-serif;color:#f4f5f7}
+.owner-dialog-card{width:640px;max-width:82vw;padding:36px;border-radius:24px;background:#20252d;box-sizing:border-box}
+.owner-dialog h2{font-size:32px;margin:0 0 22px}.owner-dialog label{display:block;font-size:20px;margin-bottom:10px}
+.owner-dialog input{box-sizing:border-box;width:100%;font:24px Manrope,Arial,sans-serif;padding:14px;border:2px solid #687382;border-radius:10px;background:#11161d;color:#fff}
+.owner-dialog p{font-size:18px;line-height:1.5}.owner-dialog button{display:inline-block;padding:12px 18px;border:1px solid #636d7b;border-radius:12px;color:inherit;background:#303741;font-size:20px;margin-right:12px;margin-bottom:10px}
+.owner-dialog button:focus,.owner-dialog input:focus{outline:2px solid #aebccc;outline-offset:3px;background:#485463}
+/* TV section follows the main menu: photo, soft panels and quiet focus. */
+.live-tv-dialog{display:block;background-color:#090e14;background-size:cover;background-position:center;color:#f6f1e7;--tv-surface:rgba(13,19,28,.80);--tv-line:rgba(255,255,255,.13);--tv-focus:rgba(155,163,176,.20);--tv-muted:rgba(246,241,231,.70)}
+.live-tv-dialog::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(5,9,15,.74)}
+.live-tv-dialog.is-day{color:#17202b;background-color:#f6f7f9;--tv-surface:rgba(250,251,253,.86);--tv-line:rgba(23,32,43,.13);--tv-focus:rgba(70,85,105,.12);--tv-muted:rgba(23,32,43,.70)}
+.live-tv-dialog.is-day::before{background:rgba(248,250,253,.64)}
+.live-tv-card{position:absolute;left:0;top:0;width:100%;height:100%;background:none;padding:0;overflow:hidden;border-radius:0}
+.live-tv-dialog h2{position:absolute;left:7.3vw;top:11.8vh;font-size:clamp(30px,3vw,56px);line-height:1.2;font-weight:500;letter-spacing:-.03em;margin:0}
+.live-tv-dialog button{font-family:inherit;color:inherit;border:0;box-shadow:none;background:transparent;border-radius:16px;margin:0;padding:12px 18px;font-size:clamp(17px,1.55vw,30px);line-height:1.3;outline:none;transition:background-color 140ms linear}
+.live-tv-dialog button:focus{background:var(--tv-focus);outline:none;box-shadow:inset 0 0 0 1px var(--tv-line)}
+.live-tv-dialog .live-tv-back{position:absolute;left:6.4vw;top:4.4vh;font-size:clamp(17px,1.45vw,28px)}
+.live-tv-sidebar{position:absolute;left:7.3vw;top:23vh;bottom:14vh;width:25.5vw;border-radius:22px;padding:1.5vh 1.2vw;background:var(--tv-surface);border:1px solid var(--tv-line);box-sizing:border-box}
+.live-tv-list-heading{display:flex;align-items:center;justify-content:space-between;height:5vh;color:var(--tv-muted)}
+.live-tv-list-heading h3{font-size:clamp(18px,1.6vw,30px);font-weight:500;margin:0}
+.live-tv-list-heading span{font-size:clamp(16px,1.3vw,24px)}
+.live-tv-channels{position:absolute;left:.8vw;right:.8vw;top:8vh;bottom:9vh;overflow-y:scroll;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(135,145,160,.55) transparent}
+.live-tv-channels::-webkit-scrollbar{width:7px}.live-tv-channels::-webkit-scrollbar-thumb{background:rgba(135,145,160,.55);border-radius:8px}
+.live-tv-channels .live-tv-channel{display:flex;align-items:center;width:calc(100% - 8px);min-height:7vh;text-align:left;padding:1.1vh .8vw;margin-bottom:.5vh}
+.live-tv-channel-number{flex:none;min-width:2.5vw;font-size:clamp(17px,1.4vw,27px);color:var(--tv-muted);font-variant-numeric:tabular-nums}
+.live-tv-channel-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.live-tv-channel[aria-pressed="true"] .live-tv-channel-name{font-weight:600}
+.live-tv-dialog .live-tv-list-status{position:absolute;left:1.2vw;right:1.2vw;top:9vh;font-size:clamp(16px,1.3vw,24px);line-height:1.5;color:var(--tv-muted);pointer-events:none}
+.live-tv-dialog .live-tv-retry{position:absolute;left:.8vw;bottom:1.3vh;font-size:clamp(16px,1.25vw,24px)}
+.live-tv-viewer{position:absolute;left:37vw;right:7.3vw;top:23vh}
+.live-tv-frame{width:100%;height:31.33vw;max-height:none;background:#05080c;border-radius:0}
+.live-tv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:2vh}
+.live-tv-dialog #liveTVStatus{font-size:clamp(16px,1.3vw,24px);line-height:1.4;margin:0 1vw 0 0;color:var(--tv-muted);max-width:30vw}
+.live-tv-dialog #liveTVFullscreen{font-size:clamp(16px,1.3vw,24px);white-space:nowrap;border:1px solid var(--tv-line)}
+.live-tv-dialog .live-tv-hint{position:absolute;left:7.3vw;bottom:5.4vh;font-size:clamp(16px,1.25vw,24px);color:var(--tv-muted);margin:0}
+.live-tv-hint span{margin-left:2vw}
+@media(max-width:1300px){.owner-dialog-card{padding:24px}.owner-dialog-card h2{font-size:26px}.owner-dialog-card button{font-size:17px;padding:9px 13px}.owner-dialog-card p{font-size:16px}}
+
+.detail-inputs .setting-section+.setting-section{margin-top:16px}
+.detail-inputs .setting-label{font-size:24px;line-height:30px;margin-bottom:6px}
+.detail-inputs .setting-choice{font-size:28px;line-height:36px;min-height:78px;padding:8px 14px}
+.detail-inputs .setting-description{font-size:22px;line-height:28px}
+.detail-inputs .setting-name{max-width:230px;overflow:hidden;text-overflow:ellipsis}
+
+/* Shared menu navigation, separate from the Home app controls. */
+.panel-nav{position:absolute;z-index:8;left:124px;top:24px;display:flex;align-items:center;color:var(--ink);font-family:Manrope,sans-serif}
+.panel-nav[hidden]{display:none}
+.panel-nav-button{display:flex;align-items:center;height:48px;padding:0 20px;border-radius:14px;background:none;color:var(--mute);font-size:26px;line-height:36px}
+.panel-nav-button+.panel-nav-button{margin-left:16px}
+.panel-nav-button .ico{width:26px;height:26px;margin-right:12px}
+.panel-nav-button.is-focus{color:var(--ink);background:var(--plate);box-shadow:var(--plate-edge)}
+.stage.at-apps .s-title,.stage.at-editor .s-title,.stage.at-settings .s-title{top:88px;font-size:50px}
+.stage.at-apps .s-head,.stage.at-editor .s-head{top:88px}
+.stage.at-apps .s-sub,.stage.at-editor .s-sub{top:164px;max-width:1668px;font-size:26px;line-height:36px}
+.er-move{width:108px;height:36px;display:flex;align-items:center;justify-content:flex-end;opacity:.65;font-size:22px;line-height:30px}
+.er-move .ico{width:24px;height:24px;margin-right:6px}
+.er-name.is-focus .er-move,.er.is-lifted .er-move{opacity:1}
+.er.is-lifted .er-move{width:140px}
+
+/* Reserve a distinct column for checkmarks; translated labels must fit. */
+.setting-copy{flex:1;min-width:0}
+.setting-name{white-space:normal;overflow-wrap:break-word}
+.setting-tick{flex:none;margin-left:16px}
+.is-horizontal .setting-tick{margin-left:12px}
+.section-material .setting-choice:last-child{flex:initial}
+
+.clock-day{display:block;margin-top:4px;font-family:Manrope,Arial,sans-serif;font-size:24px;line-height:32px;font-weight:500;letter-spacing:0;opacity:.78}
+
+/* Remote-first HDMI naming, with explicit save/cancel and no native keyboard dependency. */
+.at-hdmiName .s-title{top:88px;font-size:48px}
+.at-hdmiName .s-head{top:88px}
+.at-hdmiName .s-sub{top:172px;max-width:1640px;font-size:26px;line-height:36px}
+.hdmi-name-value{position:absolute;left:140px;right:140px;top:248px;height:88px;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-radius:20px;background:var(--plate);font-size:44px;white-space:nowrap;overflow:hidden}
+.hdmi-name-value>span{overflow:hidden;text-overflow:ellipsis}
+.hdmi-name-value small{flex:none;margin-left:24px;font-size:24px;color:var(--mute)}
+.hdmi-keyboard{position:absolute;left:300px;top:392px;width:1320px}
+.hdmi-key-row{display:flex}
+.hdmi-key-row+.hdmi-key-row{margin-top:12px}
+.hdmi-key{width:120px;height:76px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:36px;color:var(--ink);background:rgba(160,160,170,.10)}
+.hdmi-key+.hdmi-key{margin-left:12px}
+.hdmi-key.is-focus{background:var(--solid);color:var(--solid-ink)}
+.hdmi-key-tools{position:absolute;left:300px;top:776px;display:flex}
+.hdmi-key-tools>*+*{margin-left:24px}
+.hdmi-name-hint{position:absolute;left:140px;bottom:96px;font-size:28px;color:var(--mute)}
+
+/* Only the current Home region is highlighted. */
+.quiet-utils .u.is-focus{background:rgba(145,150,158,.27);box-shadow:inset 0 0 0 1px rgba(195,200,210,.19)}
+.bg-photo.gaming-day .quiet-utils .u.is-focus,.bg-light .quiet-utils .u.is-focus{background:rgba(80,90,105,.17);box-shadow:inset 0 0 0 1px rgba(60,70,85,.14)}
+/* Seven visible categories, including direct HDMI naming, above the footer. */
+.settings-overview .settings-group{height:96px;padding-top:8px;padding-bottom:8px}
+.settings-overview .settings-group-name{font-size:36px;line-height:44px}
+.settings-overview .settings-group-value{font-size:26px;line-height:32px}
+
+/* One menu focus treatment, shared with the Home header, in both themes. */
+.stage{--menu-focus-bg:rgba(145,150,158,.27);--menu-focus-edge:inset 0 0 0 1px rgba(195,200,210,.19)}
+.stage.bg-light,.stage.bg-photo.gaming-day{--menu-focus-bg:rgba(80,90,105,.17);--menu-focus-edge:inset 0 0 0 1px rgba(60,70,85,.14)}
+.stage .quiet-utils .u.is-focus,.stage .panel-nav-button.is-focus,.stage .sheet .btn.is-focus,.stage .appearance .setting-choice.is-focus,.stage .sheet .settings-group.is-focus,.stage .sheet .gt.is-focus,.stage .sheet .eo.is-focus,.stage .sheet .er-name.is-focus,.stage .sheet .er-rm.is-focus,.stage .sheet .hdmi-key.is-focus{background:var(--menu-focus-bg);box-shadow:var(--menu-focus-edge);color:var(--ink);text-shadow:none}
+.stage .s-head .btn.is-focus{transform:none}
+.stage .s-head .btn.is-focus::before{content:none}
+.stage .sheet .btn.is-idle.is-focus{color:var(--mute)}
+.stage .settings-group.is-focus .settings-group-value,.stage .settings-group.is-focus>.ico,.stage .setting-choice.is-focus .setting-description{color:var(--mute)}
+.stage .setting-choice.is-disabled.is-focus{color:var(--faint)}
+.input-choice-icon{flex:none;width:80px;height:48px;margin-right:18px;display:flex;align-items:center;justify-content:center}
+.input-choice-icon>.ico{width:44px;height:44px}
+.mark:not(.native-icon)>img{filter:brightness(0) invert(1)}
+.bg-light .mark:not(.native-icon)>img,.bg-photo.gaming-day .mark:not(.native-icon)>img{filter:brightness(0)}
+.live-tv-dialog button:focus{background:rgba(145,150,158,.27);box-shadow:inset 0 0 0 1px rgba(195,200,210,.19)}
+.live-tv-dialog.is-day button:focus{background:rgba(80,90,105,.17);box-shadow:inset 0 0 0 1px rgba(60,70,85,.14)}
+
+/* Day wallpaper menus use dark ink too, including brand masks and status text. */
+.stage.bg-photo.gaming-day{--ink:#17202b;--mute:rgba(23,32,43,.76);--faint:rgba(23,32,43,.56);--line:rgba(23,32,43,.16);--knock:#f6f7f9;--warn:#8a4b00}
+.bg-photo.gaming-day .sheet-veil{background:rgba(248,250,252,.82)}
+
+.stage.is-sheet .focus-status.dark-ink{color:var(--warn)}
+.stage .sheet .er-rm.is-limit.is-focus{color:var(--warn)}
