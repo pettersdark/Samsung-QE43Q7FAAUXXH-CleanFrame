@@ -20,7 +20,7 @@ La interfaz está en español. Traducir la documentación no cambia el idioma de
 
 - **Personalizar** abre los ajustes de nuestro menú; **Ajustes TV** abre los ajustes rápidos de Samsung.
 - En **Personalizar → Aplicaciones**, añade o elimina accesos y cambia el orden del carrusel. Usa Mover, elige la posición y guarda; puedes cancelar el movimiento.
-- **TV en directo** también se puede añadir al carrusel. La lista de canales se desplaza verticalmente y las consultas se realizan en bloques de hasta 15. Selecciona un canal para sintonizarlo o entra en pantalla completa.
+- **TV en directo** también se puede añadir al carrusel. La lista de canales se desplaza verticalmente y las consultas se realizan en bloques de hasta 15. Recorre la lista para previsualizar; pulsa OK o haz clic en un canal para sintonizarlo y verlo a pantalla completa. También se conserva el botón Ver a pantalla completa.
 - **Entradas** muestra las fuentes HDMI. Puedes añadirlas al carrusel.
 - En **Personalizar → Entradas HDMI**, selecciona el puerto, cambia su nombre o elige su icono. Confirma con Guardar; Cancelar conserva el valor anterior. El nombre no altera el puerto físico.
 - Los nombres editados dentro de Samsung no se sincronizan en tiempo real mediante la API pública usada aquí. Para nuevos nombres utiliza el editor de la aplicación.

@@ -51,3 +51,13 @@ Para retirar la integración nativa, restaura primero el estado de arranque y de
 On 2 November 2026, ESLint, resource/identity checks, 22 simulated adapter tests, all six retained browser regression scripts in Edge, public-source scanning and unsigned public-font export passed in this separate checkout. Both sanitized native C# templates compiled successfully. These local checks do not replace the physical-TV results recorded above; hosted GitHub checks run separately after publication.
 
 El 2 de noviembre de 2026 pasaron ESLint, recursos/identidad, 22 tests del adaptador, las seis pruebas de navegador en Edge, el escaneo público y la exportación sin firmar en esta copia separada. Las dos plantillas C# compilaron. Las comprobaciones locales no sustituyen las pruebas físicas anteriores; GitHub ejecuta su validación después de subir.
+
+## Channel activation update / Actualización de selección de canales · 2026-11-02
+
+Pressing OK or clicking a channel now tunes it and opens the native full-screen TV viewer after successful tuning. Moving remote focus retains preview tuning; hover never opens full-screen. The separate full-screen button remains available. Failed tuning stays in the list, and stale/cancelled requests cannot trigger a later handoff. The owner confirmed the update after installation on both TVs and authorized publication.
+
+Pulsar OK o hacer clic en un canal lo sintoniza y abre el visor a pantalla completa tras confirmar la sintonización. Mover el foco conserva la vista previa; pasar el puntero no abre pantalla completa. Se conserva el botón independiente. Los errores dejan la lista abierta y las peticiones canceladas o sustituidas no abren el visor después. El propietario confirmó el funcionamiento tras instalar en ambas TVs y autorizó la publicación.
+
+Validation: ES5 lint, resource checks, simulated adapter tests, and browser checks at 1080p/720p covering focus versus activation, explicit full-screen button, tune errors, superseded requests, Back and delayed preview cleanup. Personal signing, device identities and recovery records remain excluded from Git.
+
+Validación: sintaxis ES5, recursos, adaptador simulado y navegador a 1080p/720p, incluyendo foco frente a pulsación, botón independiente, errores de sintonización, peticiones sustituidas, Volver y limpieza tardía de la vista previa. Firma personal, identidades y recuperación quedan fuera de Git.

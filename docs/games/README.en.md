@@ -20,7 +20,7 @@ The application interface is Spanish. English documentation does not add an Engl
 
 - **Personalizar** customizes this launcher; **Ajustes TV** opens Samsung quick settings.
 - Under **Personalizar → Aplicaciones**, add/remove shortcuts and reorder the carousel. Select Mover, choose the position and save it; a move can be cancelled.
-- **TV en directo** (Live TV) can also be added to the carousel. The channel list scrolls vertically; channel queries use batches of at most 15. Select a channel to tune or enter full-screen TV.
+- **TV en directo** (Live TV) can also be added to the carousel. The channel list scrolls vertically; channel queries use batches of at most 15. Browse to preview; press OK or click a channel to tune it and open full-screen TV. The separate Ver a pantalla completa button remains available.
 - **Entradas** lists HDMI sources, which can be added to the carousel.
 - Under **Personalizar → Entradas HDMI**, select a port to rename it or choose its icon. Guardar saves; Cancelar keeps the previous value. A custom name never changes the physical source mapping.
 - Samsung's internal source names are not synchronized live through the public API used here. Use the launcher's name editor for new names.
