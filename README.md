@@ -2,7 +2,7 @@
 
 Personal Spanish launcher for the Samsung 43-inch Q7F, based on [CleanFrame by Nathan Clark](https://github.com/nthnclrk/CleanFrame). / Menú personal en español para la Samsung Q7F de 43 pulgadas.
 
-**[English guide](docs/q7f43/README.en.md) · [Guía en español](docs/q7f43/README.es.md) · [Project record / Registro](docs/q7f43/PROJECT.md) · [Release 1.1](docs/releases/1.1.md)**
+**[English guide](docs/q7f43/README.en.md) · [Guía en español](docs/q7f43/README.es.md) · [Project record / Registro](docs/q7f43/PROJECT.md) · [Release 1.2](docs/releases/1.2.md)**
 
 ![Shared interface preview at night / Vista previa de la interfaz compartida de noche](docs/images/games/release-1.1-night.jpg)
 
@@ -47,3 +47,17 @@ Lee la guía de tu idioma. Usa certificados Samsung e identidad SDK propios. El 
 ## Credits / Créditos
 
 CleanFrame by Nathan Clark and contributors; adaptation for pettersdark. Retain [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Wallpaper masters and prompts are in `design/packs/`. Brand marks belong to their owners. No Samsung endorsement is claimed. / Conserva licencias y avisos; originales y prompts en `design/packs/`. Las marcas pertenecen a sus propietarios.
+
+## Programme guide 1.2 / Guía de programación 1.2
+
+Live TV includes a compact channel list, higher 16:9 preview, title/time/progress, next programme and three visible lines of scrollable synopsis. The separate guide shows six channels and three hours per page, with duration-proportional bars and rounded day/night panels. Browse with arrows; OK consults; Ver canal explicitly tunes live TV. Back restores the preview.
+
+TV en directo incluye lista compacta, vídeo más arriba, título/horario/progreso, siguiente programa y tres líneas de sinopsis desplazable. La guía independiente muestra seis canales y tres horas, con barras proporcionales y marcos redondeados de día/noche. Flechas para recorrer, OK para consultar y Ver canal para sintonizar. Atrás vuelve a la vista previa.
+
+The owner confirmed the update and empty-channel state. This TV has no tuned channels; real broadcaster programme reception has not been validated on it. El propietario confirmó la actualización y el estado sin canales sintonizados. Esta TV no tiene canales sintonizados; la recepción de programación real no se ha validado en ella.
+
+Home and power-on open CleanFrame. Casa y encendido abren CleanFrame. No native Home/startup changes are included. / Sin cambios nativos de Casa/arranque. Broadcaster metadata may be missing; no internet EPG provider is included. / Puede faltar información emitida por las cadenas; sin proveedor EPG externo.
+
+![Programme guide preview with sample data / Guía con datos de ejemplo](docs/images/q7f43/release-1.2-guide.jpg)
+
+[Changes, validation and download / Cambios, pruebas y descarga](docs/releases/1.2.md). Screenshots show the shared browser interface with sample data, not photographs of this TV. / Capturas de la interfaz compartida en navegador con datos de ejemplo, no fotos de este televisor.
