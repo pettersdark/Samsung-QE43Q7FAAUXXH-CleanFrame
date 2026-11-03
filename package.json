@@ -2,7 +2,7 @@
   "name": "cleanframe",
   "version": "1.1.0",
   "private": true,
-  "description": "Personal Spanish launcher for Samsung S85F OLED TQ55S85FAUXXC.",
+  "description": "Personal Spanish launcher for Samsung QE43Q7FAAUXXH.",
   "scripts": {
     "dev": "python3 scripts/preview.py",
     "check": "npm run lint && python3 scripts/check.py && npm run check:device",

@@ -1,65 +1,49 @@
-# CleanFrame · Samsung S85F OLED
+# CleanFrame Samsung QE43Q7FAAUXXH
 
-**Release 1.1 — [Cambios en español / English changes](docs/releases/1.1.md)**
+Personal Spanish launcher for the Samsung 43-inch Q7F, based on [CleanFrame by Nathan Clark](https://github.com/nthnclrk/CleanFrame). / Menú personal en español para la Samsung Q7F de 43 pulgadas.
 
-A personal TV launcher adapted for the **Samsung TQ55S85FAUXXC (55-inch S85F OLED)**, based on [nthnclrk/CleanFrame](https://github.com/nthnclrk/CleanFrame). The TV interface is in Spanish. Documentation and screenshot captions are available in both languages.
+**[English guide](docs/q7f43/README.en.md) · [Guía en español](docs/q7f43/README.es.md) · [Project record / Registro](docs/q7f43/PROJECT.md) · [Release 1.1](docs/releases/1.1.md)**
 
-Un menú personal para la **Samsung TQ55S85FAUXXC (S85F OLED de 55 pulgadas)**, basado en CleanFrame. Interfaz en español; documentación y pies de captura en español e inglés.
-
-**[English guide](docs/games/README.en.md) · [Guía en español](docs/games/README.es.md)**
-
-[Project record / Registro del proyecto](docs/games/PROJECT.md) · [Screenshots / Capturas](docs/games/SCREENSHOTS.md) · [Upstream README](README.upstream.md)
-
-![Night launcher / Menú nocturno](docs/images/games/release-1.1-night.jpg)
+![Shared interface preview at night / Vista previa de la interfaz compartida de noche](docs/images/games/release-1.1-night.jpg)
 
 ## Features / Funciones
 
-- Installed TV apps only, with a configurable, reorderable carousel. / Solo aplicaciones instaladas, con carrusel configurable y ordenable.
-- HDMI shortcuts with editable names and monochrome Steam, Nintendo Switch and PS5 icons. / Accesos HDMI con nombres editables e iconos monocromos.
-- Live TV preview, scrollable channel list, tuning and optional carousel shortcut. / TDT con vista previa, lista desplazable, cambio de canal y acceso opcional en el carrusel.
-- Separate launcher customization and Samsung quick settings. / Personalización del menú y ajustes rápidos de Samsung separados.
-- 24-hour clock and weekday; consistent focus and visible Back/Home controls. / Hora de 24 horas, día de la semana y controles visibles para volver e ir a inicio.
-- 52 backgrounds in seven packages (26 day/night pairs), with design masters and generation prompts. / 52 fondos en siete paquetes (26 parejas día/noche), con originales y descripciones de generación.
+- Installed apps with an unlimited, reorderable carousel; HDMI shortcuts with editable names and monochrome icons. / Apps instaladas, carrusel sin límite configurable y accesos HDMI con nombres e iconos.
+- Live TV preview, scrollable channel list and full-screen tuning on OK; separate Samsung settings and launcher customization. / TDT con lista desplazable, pantalla completa al pulsar y ajustes separados.
+- Seven offline wallpaper packages, 52 images in 26 day/night pairs, rotation and configurable day/night schedule. / Siete paquetes sin conexión, 52 fondos en 26 parejas, rotación y horario día/noche.
+- Single-line 24-hour time and weekday, balanced margins, Soft/Frost/Clear materials on carousel, header and clock. / Hora de 24 horas y día en una línea, márgenes equilibrados y materiales en carrusel, menú y reloj.
+
+## Confirmed on this TV / Confirmado en esta TV
+
+**QE43Q7FAAUXXH · Tizen 9.0 ARMv7 · T-RSLFDEUC-0090-1300.9.** On 3 November 2026, the owner confirmed CleanFrame opening, physical Home returning from YouTube to CleanFrame, Back opening Samsung Home and two normal power-on cycles from YouTube starting CleanFrame.
+
+El 3 de noviembre de 2026 el propietario confirmó apertura, Casa desde YouTube a CleanFrame, Atrás al menú Samsung y arranque en CleanFrame en dos encendidos normales desde YouTube. HDMI, canales y ajustes rápidos no se han validado individualmente en este modelo.
+
+Native integration was configured separately with an exact private recovery baseline. The public download does not configure Home/startup. These tests do not guarantee behavior after firmware changes. / La integración nativa se configuró por separado con recuperación privada. La descarga pública no configura Casa ni arranque; las pruebas no garantizan el comportamiento tras cambios de firmware.
 
 ## Preview / Vista previa
 
-Requires Node.js 22.13+ or 24+, Python 3.10+, and npm. / Requiere Node.js 22.13+ o 24+, Python 3.10+ y npm.
+Requires Node.js 22.13+ or 24+, Python 3.10+ and npm. / Requiere Node.js 22.13+ o 24+, Python 3.10+ y npm.
 
 ```sh
-git clone https://github.com/pettersdark/Samsung-TQ55S85FAUXXC-CleanFrame.git
-cd Samsung-TQ55S85FAUXXC-CleanFrame
+git clone https://github.com/pettersdark/Samsung-QE43Q7FAAUXXH-CleanFrame.git
+cd Samsung-QE43Q7FAAUXXH-CleanFrame
 npm ci
 python scripts/preview.py --public-fonts
 ```
 
-On macOS/Linux, use `python3` if needed. Open http://localhost:4795/home/. Use arrows, Enter and Escape. Actual TV actions require a compatible TV. / En macOS/Linux usa `python3` si corresponde. Abre la dirección anterior; usa flechas, Intro y Escape. Las funciones del televisor requieren una TV compatible.
+Use `python3` on systems that require it. Open http://localhost:4795/home/; arrows, Enter and Escape control the preview. Device actions require a TV. / Usa `python3` si corresponde. Abre la dirección anterior; flechas, Intro y Escape. Las acciones de TV requieren el dispositivo.
 
-## Confirmed on this TV / Confirmado en esta TV
+![Shared daytime interface preview / Vista previa compartida de día](docs/images/games/release-1.1-day.jpg)
 
-Samsung TQ55S85FAUXXC · S85F OLED 55-inch (2025) · Tizen 9 ARMv7 · firmware T-PTMFDEUC-0090-1301.0. App installation/opening, physical Home and the requested standby startup test were confirmed by the owner on 2 November 2026. HDMI, channel tuning and Samsung settings still need individual confirmation on this TV.
+These images show the shared interface in a browser preview, not photographs of this TV. / Las imágenes muestran la interfaz compartida en el navegador; no son fotografías de este televisor.
 
-Instalación y apertura de la app, botón Inicio y arranque desde espera confirmados por el propietario el 2 de noviembre de 2026. HDMI, sintonización de canales y ajustes Samsung pendientes de comprobación individual en esta TV.
+## Installation / Instalación
 
-## Installation and limits / Instalación y límites
+Read the language guide. Use your own Samsung certificates and SDK-generated identity. The release widget is unsigned and contains public fonts. Certificates, signed personal widgets, device identifiers, addresses and recovery settings are excluded. Historical native tools retain their reference guards and are not an automatic installer for this model.
 
-Read the language guide before installing. Use your own Samsung developer certificates and SDK-generated app identity. This repository contains source, assets and documentation, without personal keys, signed packages or device recovery state. On this TV the owner confirmed physical Home routing and launcher startup in a standby test. Native integration is firmware-specific; **one successful test does not guarantee every future power-on**.
+Lee la guía de tu idioma. Usa certificados Samsung e identidad SDK propios. El paquete público no está firmado y usa fuentes públicas. Se excluyen certificados, paquetes personales firmados, identificadores, direcciones y valores de recuperación. Los ayudantes históricos no son un instalador automático para este modelo.
 
-Lee la guía antes de instalar. Usa certificados de desarrollador propios y una identidad de aplicación generada por el SDK. El repositorio contiene código, recursos y documentación; excluye claves personales, paquetes firmados y datos de recuperación. El propietario confirmó Inicio y el arranque en una prueba de espera. La integración depende del firmware; **una prueba correcta no garantiza todos los encendidos futuros**.
+## Credits / Créditos
 
-## Credits and licences / Créditos y licencias
-
-CleanFrame by Nathan Clark and contributors; games-TV adaptation for pettersdark. Preserve [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Brand logos retain their owners' rights. Generated wallpaper provenance is recorded in `app/assets/wallpapers/SOURCES.json`; prompts and selected masters are in `design/backgrounds/`. No Samsung or platform endorsement is claimed.
-
-## Wallpaper packages and inline clock / Paquetes y reloj en una línea
-
-This update replaces the previous gallery with seven offline packages / 52 images.
-Package selection, scene rotation and automatic day/night timing are in
-Personalizar → Fondo. The 24-hour time and weekday share one line. Existing
-Home/startup behavior is preserved for this model.
-
-Esta actualización sustituye la galería anterior por siete paquetes / 52 fondos.
-En Personalizar → Fondo se elige paquete, escena, rotación y horario día/noche.
-Hora y día van en una línea. Se conserva el comportamiento de Casa y arranque.
-[Behavior and validation / Uso y pruebas](docs/wallpaper-packs.md).
-
-![Seven wallpaper packages / Siete paquetes de fondos](docs/images/games/wallpaper-packages.jpg)
+CleanFrame by Nathan Clark and contributors; adaptation for pettersdark. Retain [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Wallpaper masters and prompts are in `design/packs/`. Brand marks belong to their owners. No Samsung endorsement is claimed. / Conserva licencias y avisos; originales y prompts en `design/packs/`. Las marcas pertenecen a sus propietarios.
